@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>Generate sequential GUIDs that MS SQL Server can sort by date (for mapping to the 'uniqueidentifier' datatype)</Description>
+    <PackageIcon>GuidGenerator.png</PackageIcon>
+    <Authors>Sergey Nosov</Authors>
+    <Company>OrderFactory</Company>
+    <Product>GuidGenerator</Product>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Copyright>Copyright © 2019-2022 Sergey Nosov</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>sequential guid;guid;sql server;guid generator;sortable guid;uniqueidentifier;guids</PackageTags>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\support\keys\OrderFactory.GuidGenerator.snk</AssemblyOriginatorKeyFile>
+    <PackageProjectUrl>https://www.orderfactory.com/soft/Guid-Generator/</PackageProjectUrl>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <RepositoryUrl>https://github.com/orderfactory/guid-generator.git</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\support\images\GuidGenerator.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
